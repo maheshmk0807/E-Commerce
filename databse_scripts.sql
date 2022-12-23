@@ -20,6 +20,9 @@ insert into user values("stu@gmail.com","stu","1234","BUYER");
 insert into user values("vwx@gmail.com","vwx","1234","SELLER");
 insert into user values("zzz@gmail.com","zzz","1234","BUYER");
 
+insert into user values("b","Admin","b","BUYER");
+insert into user values("s","Admin","s","SELLER");
+
 
 create table product(
 productID int PRIMARY KEY,
@@ -42,7 +45,17 @@ insert into product values(9,"Table",2500,"abc@gmail.com");
 insert into product( sellerID, productName, productID, price) values("ghi@gmail.com","Mouse",10,350);
 
 -- Select max(productid) from product;
+select * from product;
 
+Select * from product where sellerID='s';
 
+create table orders(
+orderID int primary key,
+productID int,
+userID varchar(255),
+dateOfOrder datetime,
+foreign key(productID) references product(productID),
+foreign key(userID) references user(emailID));
 
-
+select * from orders;
+delete from orders where orderID=0;

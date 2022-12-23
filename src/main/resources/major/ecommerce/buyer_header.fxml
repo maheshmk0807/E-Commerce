@@ -10,26 +10,19 @@
 
 
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.shape.Line?>
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="1080.0"
             xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="major.ecommerce.buyerheadercontroller">
 
-<children>
-   <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#80bcf5" height="100.0" stroke="BLACK" strokeType="INSIDE" width="1080.0" />
-   <Button layoutX="726.0" layoutY="42.0" mnemonicParsing="false" text="Search" />
-   <TextField layoutX="190.0" layoutY="42.0" prefHeight="25.0" prefWidth="488.0" promptText="Search" />
-   <Text layoutX="957.0" layoutY="43.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Logged in with" />
+   <children>
 
+      <ButtonBar layoutX="14.0" layoutY="27.0" prefHeight="40.0" prefWidth="200.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#653838" height="100.0" stroke="BLACK" strokeType="INSIDE" width="1080.0" />
+      <Button layoutX="350.0" layoutY="40.0" mnemonicParsing="false" prefHeight="20.0" prefWidth="100.0" text="Search" onMouseClicked="#search"/>
+      <Button fx:id="logout" layoutX="930.0" layoutY="40.0" mnemonicParsing="false" onMouseClicked="#logout" prefHeight="20.0" prefWidth="100.0" text="Log Out" textFill="#ae1313" />
+      <TextField fx:id="searchText" layoutX="50.0" layoutY="40.0" prefHeight="20.0" prefWidth="250.0" promptText="Search" />
+      <Line endX="980.0" layoutX="100.0" layoutY="100.0" startX="-100.0" />
 
-
-   <Text layoutX="24.0" layoutY="43.0" strokeType="OUTSIDE" strokeWidth="0.0" text="User Type" wrappingWidth="78.861328125">
-      <font>
-         <Font name="System Bold" size="12.0" />
-      </font>
-   </Text>
-   <Text layoutX="28.0" layoutY="68.0" strokeType="OUTSIDE" strokeWidth="0.0" text="BUYER">
-      <font>
-         <Font name="System Bold" size="14.0" />
-      </font>
-   </Text>
-</children>
+   </children>
 </AnchorPane>

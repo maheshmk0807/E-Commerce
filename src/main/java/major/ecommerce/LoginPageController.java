@@ -2,23 +2,17 @@ package major.ecommerce;
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
-
 import java.io.IOException;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-
 public class LoginPageController {
     @FXML
     TextField email;
     @FXML
     TextField password;
-
-
-    public static String currentUser;
     @FXML
     public void login (MouseEvent e) throws SQLException, IOException {
         String query = String.format("Select * from user where emailID = '%s' AND pass ='%s'",email.getText(),password.getText());
@@ -31,28 +25,26 @@ public class LoginPageController {
             {
                 AnchorPane sellerpage = FXMLLoader.load(getClass().getResource("SellerMenu.fxml"));
                 Main.root.getChildren().add(sellerpage);
-                currentUser= email.getText();
             }
             else  //OPEN BUYER PAGE
             {
-                System.out.println("BUYER LOGIN DONE");
                 AnchorPane bh = FXMLLoader.load(getClass().getResource("buyer_header.fxml"));
-
                 ProductPage productpage = new ProductPage();
                 AnchorPane productpane = new AnchorPane();
                 productpane.getChildren().add(productpage.products());
                 productpane.setLayoutX(150);
                 productpane.setLayoutY(150);
-
                 Main.root.getChildren().clear();
                 Main.root.getChildren().addAll(productpane,bh);
-
-
             }
-            System.out.println("User Valid");
         }
         else {
-            System.out.println("USER NOT VALID");
+            Dialog<String> dialog = new Dialog<>();
+            dialog.setTitle("Invalid Credentials");
+            ButtonType type = new ButtonType("OK", ButtonBar.ButtonData.OK_DONE);
+            dialog.getDialogPane().getButtonTypes().add(type);
+            dialog.setContentText("Please check Username/Password and try again.");
+            dialog.showAndWait();
         }
     }
 }

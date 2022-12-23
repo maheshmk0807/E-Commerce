@@ -1,7 +1,6 @@
 package major.ecommerce;
 
 import java.sql.*;
-
 public class Databaseconnection {
     Connection con = null;
     String Url = "jdbc:mysql://localhost:3306/ecommerce?useSSL=false";
