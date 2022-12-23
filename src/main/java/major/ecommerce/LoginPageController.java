@@ -2,6 +2,7 @@ package major.ecommerce;
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
@@ -15,6 +16,7 @@ public class LoginPageController {
     TextField email;
     @FXML
     TextField password;
+
 
     public static String currentUser;
     @FXML
@@ -34,17 +36,17 @@ public class LoginPageController {
             else  //OPEN BUYER PAGE
             {
                 System.out.println("BUYER LOGIN DONE");
+                AnchorPane bh = FXMLLoader.load(getClass().getResource("buyer_header.fxml"));
 
                 ProductPage productpage = new ProductPage();
-                buyer_header header = new buyer_header();
                 AnchorPane productpane = new AnchorPane();
                 productpane.getChildren().add(productpage.products());
                 productpane.setLayoutX(150);
                 productpane.setLayoutY(150);
 
-
                 Main.root.getChildren().clear();
-                Main.root.getChildren().addAll(header.root,productpane);
+                Main.root.getChildren().addAll(productpane,bh);
+
 
             }
             System.out.println("User Valid");

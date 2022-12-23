@@ -9,6 +9,7 @@
 <?import javafx.scene.text.Text?>
 
 
+<?import javafx.scene.control.Label?>
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="1080.0"
             xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="major.ecommerce.buyerheadercontroller">
 
@@ -17,11 +18,9 @@
    <Button layoutX="726.0" layoutY="42.0" mnemonicParsing="false" text="Search" />
    <TextField layoutX="190.0" layoutY="42.0" prefHeight="25.0" prefWidth="488.0" promptText="Search" />
    <Text layoutX="957.0" layoutY="43.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Logged in with" />
-   <Text layoutX="924.0" layoutY="67.0" strokeType="OUTSIDE" strokeWidth="0.0" text="username unavailable">
-      <font>
-         <Font name="System Bold Italic" size="14.0" />
-      </font>
-   </Text>
+
+
+
    <Text layoutX="24.0" layoutY="43.0" strokeType="OUTSIDE" strokeWidth="0.0" text="User Type" wrappingWidth="78.861328125">
       <font>
          <Font name="System Bold" size="12.0" />

@@ -7,7 +7,6 @@ import javafx.scene.layout.AnchorPane;
 import java.io.IOException;
 
 public class ViewProductsController {
-
     public void logout (MouseEvent e) throws IOException {
         AnchorPane loginpage = FXMLLoader.load(getClass().getResource("loginPage.fxml"));
         Main.root.getChildren().clear();
