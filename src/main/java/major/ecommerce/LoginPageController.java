@@ -23,6 +23,7 @@ public class LoginPageController {
         ResultSet result = Main.connection.executeMyQuery(query);
         if(result.next())
         {
+            Main.CEID=result.getString("emailID");
             String usertype = result.getString("userType");
             if(usertype.equals("SELLER")) //OPEN SELLER PAGE
             {
@@ -32,6 +33,18 @@ public class LoginPageController {
             }
             else  //OPEN BUYER PAGE
             {
+                System.out.println("BUYER LOGIN DONE");
+
+                ProductPage productpage = new ProductPage();
+                buyer_header header = new buyer_header();
+                AnchorPane productpane = new AnchorPane();
+                productpane.getChildren().add(productpage.products());
+                productpane.setLayoutX(150);
+                productpane.setLayoutY(150);
+
+
+                Main.root.getChildren().clear();
+                Main.root.getChildren().addAll(header.root,productpane);
 
             }
             System.out.println("User Valid");
