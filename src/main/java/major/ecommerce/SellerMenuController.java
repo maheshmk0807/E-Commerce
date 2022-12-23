@@ -14,22 +14,27 @@ public class SellerMenuController {
     @FXML
 
     public void addproduct (MouseEvent e) throws IOException {
+        seller_header headers = new seller_header();
         AnchorPane sellerpage = FXMLLoader.load(getClass().getResource("AddProduct.fxml"));
-        Main.root.getChildren().add(sellerpage);
+        Main.root.getChildren().clear();
+        Main.root.getChildren().addAll(sellerpage);
     }
 
     @FXML
     public void viewproducts (MouseEvent e) throws IOException {
         AnchorPane viewproductspage = FXMLLoader.load(getClass().getResource("viewproducts.fxml"));
+        Main.root.getChildren().clear();
         Main.root.getChildren().add(viewproductspage);
 
     }
     public void deleteproduct (MouseEvent e) throws IOException {
         AnchorPane deleteproductpage = FXMLLoader.load(getClass().getResource("deleteproduct.fxml"));
+        Main.root.getChildren().clear();
         Main.root.getChildren().add(deleteproductpage);
     }
     public void logout (MouseEvent e) throws IOException {
-        AnchorPane homepage = FXMLLoader.load(getClass().getResource("Header.fxml"));
-        Main.root.getChildren().add(homepage);
+        AnchorPane loginpage = FXMLLoader.load(getClass().getResource("loginPage.fxml"));
+        Main.root.getChildren().clear();
+        Main.root.getChildren().add(loginpage);
     }
 }

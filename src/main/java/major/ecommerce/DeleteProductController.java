@@ -9,7 +9,8 @@ import java.io.IOException;
 public class DeleteProductController {
 
     public void logout (MouseEvent e) throws IOException {
-        AnchorPane homepage = FXMLLoader.load(getClass().getResource("Header.fxml"));
-        Main.root.getChildren().add(homepage);
+        AnchorPane loginpage = FXMLLoader.load(getClass().getResource("loginPage.fxml"));
+        Main.root.getChildren().clear();
+        Main.root.getChildren().add(loginpage);
     }
 }
